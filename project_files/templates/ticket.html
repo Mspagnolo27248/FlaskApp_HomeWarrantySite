@@ -1,0 +1,28 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+{% extends "base.html" %}
+{% block content %}
+<body>
+    <h1>Create New Warranty Issue</h1>
+    <div>
+        <form method="POST">
+            <div class='form-group frms'>
+            {{form.hidden_tag()}}
+            {{form.category.label}}{{form.category(class='form-control')}} <br>
+            {{form.desc.label}} {{form.desc(class='form-control')}} <br>
+            {{form.createdate.label}} {{form.createdate(class='form-control')}} <br>
+            {{form.closedate.label}} {{form.closedate(class='form-control')}} <br>
+            {{form.submit(class='form-control')}} 
+            </div>
+
+        </form>
+    </div>
+</body>
+{% endblock %}
+</html>

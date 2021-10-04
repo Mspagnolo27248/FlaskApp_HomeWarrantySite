@@ -1,0 +1,16 @@
+a {
+    margin: 5px;
+    color: rgb(65, 65, 68);
+}
+
+.frms{
+    margin: auto;
+    width: 500px;
+    padding: 5px;
+}
+
+.listitem{
+    background-color: rgb(153, 153, 160);
+    color:black;
+    width: 400px;
+}
