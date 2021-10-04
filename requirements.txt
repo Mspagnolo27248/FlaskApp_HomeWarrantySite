@@ -25,10 +25,10 @@ Pillow==8.3.2
 pip==21.2.4
 python-dateutil==2.8.2
 pytz==2021.1
-setuptools==52.0.0.post20210125
-six==1.16.0
+setuptools
+six
 SQLAlchemy==1.4.23
 Werkzeug==1.0.1
 wheel==0.37.0
 WTForms==2.3.3
-zipp==3.5.0
+zipp
