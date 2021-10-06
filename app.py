@@ -131,7 +131,22 @@ def add_item():
     return render_template('item.html',form=form,user_id=user_id) 
 
 
-
+@app.route('/reports')
+def reports():
+    query = \
+        """
+        SELECT Category
+        ,count(home_id) as Counts
+        FROM tickets 
+        join category on tickets.category_id = category.id
+        GROUP BY Category
+        ORDER BY Counts
+        
+        """
+    count_of_tickets = db.session.execute(query)
+    mydict  = [{"category":i[0],"value":str(i[1])} for i in count_of_tickets]
+    print(mydict)
+    return render_template("reports.html",data = mydict)
 
 
 if  __name__ =='__main__':
