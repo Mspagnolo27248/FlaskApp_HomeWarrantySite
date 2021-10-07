@@ -145,7 +145,7 @@ def reports():
         """
     count_of_tickets = db.session.execute(query)
     mydict  = [{"category":i[0],"value":str(i[1])} for i in count_of_tickets]
-    print(mydict)
+    #print(mydict)
     return render_template("reports.html",data = mydict)
 
 

@@ -12,16 +12,19 @@
 <!-- Create a div where the graph will take place -->
 
 </head>
-
-<body>
-  <h1>Community Issues By Category</h1>
+{% extends "base.html" %} 
+{% block content %}
+<body >
+  <h1>Reports</h1>
+  <h2></h2>Community Issues By Category</h2>
   <div id="my_dataviz"></div>
     {% for item in data %}
-    <div> {item.category:item.value} </div>
+    <div> {{item.category}}:{{item.value}} </div>
     {% endfor %}
     
 
 </body>
+
 <script>
 
 
@@ -79,4 +82,5 @@
     })
     
     </script>
+{% endblock %}
 </html>
