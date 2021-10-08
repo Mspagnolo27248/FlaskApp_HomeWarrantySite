@@ -22,19 +22,33 @@
 </head>
 
 <body>
-    <ul class='nav'>
-        <li class="nav-li"><a href="{{url_for('index')}}">Home</a></li>
+    <div class="row site-nav">
+        <div class="col-md-4 base-name">
+            <h1>Whitetail Meadows</h1>
+            <h1>Warranty Site</h1>
+        </div>
+        <div class='col-md-4 base-pic'>
+            <img src="{{url_for('static', filename='/images/sign1.jpeg', width=100, height=25, quality=95)}}" />
+        </div>
         
-        {% if current_user.is_authenticated%}    
-        <li class="nav-li"><a href="{{url_for('logout')}}">Logout</a></li>
-        <li class="nav-li"><a href="{{url_for('reports')}}">Reports</a></li>
-        {% else %}
-        <li class="nav-li"><a href="{{url_for('login')}}">Login</a></li>
-        <li class="nav-li"><a href="{{url_for('register')}}">Register</a></li>
-        
-        {% endif%} 
-    </ul>
-    <img src="{{url_for('static', filename='/images/sign1.jpeg', width=100, height=25, quality=95)}}"/>
+        <div class="col-md-4 base-nav">
+            <ul class='navbar-nav base-ul'>
+                <li class="nav-li"><a class="base-a" href="{{url_for('index')}}">Home</a></li>
+    
+                {% if current_user.is_authenticated%}
+                <li class="nav-li"><a class="base-a" href="{{url_for('logout')}}">Logout</a></li>
+                <li class="nav-li"><a class="base-a" href="{{url_for('reports')}}">Reports</a></li>
+                {% else %}
+                <li class="nav-li"><a class="base-a" href="{{url_for('login')}}">Login</a></li>
+                <li class="nav-li"><a class="base-a" href="{{url_for('register')}}">Register</a></li>
+    
+                {% endif%}
+            </ul>
+    
+        </div>
+
+    </div>
+
     {% block content %}
 
     {% endblock %}

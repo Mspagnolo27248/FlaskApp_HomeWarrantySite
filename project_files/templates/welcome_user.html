@@ -13,24 +13,24 @@
 
 <body>
     <div>
-        <p>
-            Congrats! You are logged in!
-        </p>
+    
     </div>
     <div>
 
-        <h1>Whiteteail Meadows Ticket Entry System <h1>
-                <h1>Welcome {{owner}} </h1>
+       
+                <h3>Hello {{owner}} </h3>
+                <h2>  <h2>
             </h1>
-            <a href="{{url_for('add_item')}}">Create New Issue</a>
+            <button><a href="{{url_for('add_item')}}"> Create New Issue </a></button>
             <ul>
                 {% for ticket in tickets %}
                 <li class='listitem'>
                     <div>Ticket# : {{ticket.id}}</div>
-                    <div>Category: {{ticket.category}}</div>
-                    <div>Description: {{ticket.desc}}</div>
                     <div>Open Date #: {{ticket.create_date}}</div>
                     <div>Close Date #: {{ticket.close_date}}</div>
+                    <div>Category: {{ticket.category}}</div>
+                    <div>Description: {{ticket.desc}}</div>
+                  
                 </li>
                 <a href="/ticket/{{ticket.id}}">Edit</a>
                 <a href="{{url_for('delete',ticket_id = ticket.id)}}">Delete</a>

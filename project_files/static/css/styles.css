@@ -1,8 +1,26 @@
 a {
     margin: 5px;
-    color: rgb(65, 65, 68);
+    color:blue;
+
+}
+body{
+    text-align: center;
+}
+div{
+    text-align: center;
+}
+button{
+    margin-top: 5px;
+    margin-bottom: 25px;
 }
 
+li {
+    list-style: none;
+}
+
+ul {
+    list-style: none;
+}
 .frms{
     margin: auto;
     width: 500px;
@@ -13,4 +31,35 @@ a {
     background-color: rgb(153, 153, 160);
     color:black;
     width: 400px;
+    margin: auto;
+}
+.base-ul{
+    text-align: center;
+}
+.site-nav{
+    background-color: black;
+    padding: 10px;
+  
+}
+.base-name{
+    background-color: black;
+    color: white;
+    
+}
+.base-pic{
+    background-color: black;
+    color: white;
+    
+}
+.base-nav{
+  
+    background-color: black;
+    color: white;
+   
+}
+.base-a{
+    color: whitesmoke;
+}
+.a-lg{
+    color: whitesmoke;
 }
