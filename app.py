@@ -14,7 +14,7 @@ def register():
     form = RegistrationForm()
 
     if form.validate_on_submit():
-        user = User(email=form.email.data,
+        user = User(email=form.email.data.lower(),
         username = form.username.data,
         password=form.password.data,
         address=form.address.data)
@@ -30,10 +30,11 @@ def register():
 def login():
     form = LoginForm()
     if form.validate_on_submit():
-        user = User.query.filter_by(email=form.email.data).first()
-        user_id = user.id
+        user = User.query.filter_by(email=form.email.data.lower()).first()
+        if user:
+            user_id = user.id
         if not user:
-            redirect(url_for('register'))
+            return redirect(url_for('register'))
         elif user.check_password(form.password.data) and user is not None:
             login_user(user) #This is implmented since we inheret the UserMixin
             flash("Logged In Successfully!")
