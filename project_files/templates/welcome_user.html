@@ -21,7 +21,7 @@
                 <h3>Hello {{owner}} </h3>
                 <h2>  <h2>
             </h1>
-            <button><a href="{{url_for('add_item')}}"> Create New Issue </a></button>
+            <button class="btn btn-primary"><a href="{{url_for('add_item')}}"> Create New Issue </a></button>
             <ul>
                 {% for ticket in tickets %}
                 <li class='listitem'>

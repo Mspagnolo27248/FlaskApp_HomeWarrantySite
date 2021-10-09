@@ -19,10 +19,13 @@
             <button type="button" class="btn btn-secondary"><a class="a-lg" href="{{url_for('welcome_user',user_id=current_user.id)}}">Tickets</a></button>
             <button type="button" class="btn btn-secondary"><a class="a-lg" href="{{url_for('reports')}}">Reports</a></button>
             
-          
+        
         </div>
         {% else%}
-        <p> Please Login or Register</p>
+        <p> Please 
+            <a href="{{url_for('login')}}">Login</a>
+            or 
+            <a href="{{url_for('register')}}">Register</a></p>
         {% endif %}
     </div>
 
