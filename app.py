@@ -3,7 +3,7 @@ from flask import render_template,url_for,redirect,flash,abort,request,session
 from flask_login import login_user,logout_user,login_required
 from project_files.models import User,TicketModel,CategoryModel
 from project_files.forms import RegistrationForm,LoginForm,AddTicketForm
-
+from datetime import datetime
 
 @app.route('/')
 def index():
@@ -77,8 +77,9 @@ def update_ticket(ticket_id=0):
         form.category.choices = [(category.id,category.category) for category in 
         db.session.query(CategoryModel).all()]
         form.desc.data = ticket.desc
-        form.closedate.data = ticket.close_date
-        form.createdate.data = ticket.create_date
+        if ticket.close_date:
+            form.closedate.data = datetime.strptime(ticket.close_date,'%Y-%m-%d')
+        form.createdate.data = datetime.strptime(ticket.create_date,'%Y-%m-%d')
         form.category.data = ticket.category_id
     else:     
         form  = AddTicketForm()
@@ -122,10 +123,9 @@ def add_item():
         #owner = user_id
         desc = form.desc.data
         create_date =form.createdate.data
-        if form.closedate.data:
-                close_date = form.closedate.data
-        else:
-            close_date = "Active"
+        
+        close_date = form.closedate.data
+     
         category = form.category.data
 
         new_item =TicketModel(user_id,desc,create_date,close_date,category)
