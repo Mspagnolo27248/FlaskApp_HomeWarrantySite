@@ -122,7 +122,10 @@ def add_item():
         #owner = user_id
         desc = form.desc.data
         create_date =form.createdate.data
-        close_date = form.closedate.data
+        if form.closedate.data:
+                close_date = form.closedate.data
+        else:
+            close_date = "Active"
         category = form.category.data
 
         new_item =TicketModel(user_id,desc,create_date,close_date,category)

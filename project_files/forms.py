@@ -3,7 +3,8 @@ from flask_wtf import FlaskForm
 from wtforms import StringField,SubmitField,PasswordField,TextAreaField,SelectField
 from wtforms.validators import DataRequired,Email,EqualTo
 from wtforms import ValidationError
-
+from wtforms.validators import Optional
+from wtforms.fields.html5 import DateField
 from project_files.models import User
 
 
@@ -36,8 +37,8 @@ class RegistrationForm(FlaskForm):
 class AddTicketForm(FlaskForm):
     #home_id = StringField('Owner Id') #Change to pass throough html.
     desc = TextAreaField('Describe Issue')
-    createdate = StringField("Create Date")
-    closedate = StringField("Close")    
+    createdate = DateField('Open Date', format='%Y-%m-%d')
+    closedate = DateField('Close Date', format='%Y-%m-%d', validators=(Optional(),))  
     category = SelectField("Category",choices=[])
     submit = SubmitField('Submit')
 
