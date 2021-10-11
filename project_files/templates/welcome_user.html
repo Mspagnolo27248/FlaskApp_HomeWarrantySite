@@ -13,35 +13,32 @@
 
 <body>
     <div>
-    
-    </div>
-    <div>
+        <h3>Hello {{owner}} </h3>
+        <h2>
+            <h2>
+                </h1>
+                <button class="btn btn-primary"><a class="wc" href="{{url_for('add_item')}}"> Create New Issue
+                    </a></button>
+                <ul>
+                    {% for ticket in tickets %}
+                    <li class='listitem'>
+                        <div>Ticket# : {{ticket.id}}</div>
+                        <div>Open Date #: {{ticket.create_date}}</div>
+                        <div>Close Date #:
+                            {% if ticket.close_date == None %}
+                            Active
+                            {% else %}
+                            {{ticket.close_date}}
+                            {% endif %}
+                        </div>
+                        <div>Category: {{ticket.category}}</div>
+                        <div>Description: {{ticket.desc}}</div>
 
-       
-                <h3>Hello {{owner}} </h3>
-                <h2>  <h2>
-            </h1>
-            <button class="btn btn-primary"><a class="wc" href="{{url_for('add_item')}}"> Create New Issue </a></button>
-            <ul>
-                {% for ticket in tickets %}
-                <li class='listitem'>
-                    <div>Ticket# : {{ticket.id}}</div>
-                    <div>Open Date #: {{ticket.create_date}}</div>
-                    <div>Close Date #: 
-                    {% if ticket.close_date == None %}
-                        Active
-                    {% else %}
-                    {{ticket.close_date}}
-                    {% endif %}
-                    </div>
-                    <div>Category: {{ticket.category}}</div>
-                    <div>Description: {{ticket.desc}}</div>
-                  
-                </li>
-                <a href="/ticket/{{ticket.id}}">Edit</a>
-                <a href="{{url_for('delete',ticket_id = ticket.id)}}">Delete</a>
-                {% endfor %}
-            </ul>
+                    </li>
+                    <a href="/ticket/{{ticket.id}}">Edit</a>
+                    <a href="{{url_for('delete',ticket_id = ticket.id)}}">Delete</a>
+                    {% endfor %}
+                </ul>
     </div>
 </body>
 {% endblock %}

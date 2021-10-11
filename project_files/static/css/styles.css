@@ -23,8 +23,8 @@ ul {
 }
 .frms{
     margin: auto;
-    width: 500px;
-    padding: 5px;
+
+    padding: 25px;
 }
 
 .listitem{
@@ -63,4 +63,7 @@ ul {
 
 .wc{
     color: whitesmoke;
+}
+.frm-tkt{
+    text-align: center;
 }

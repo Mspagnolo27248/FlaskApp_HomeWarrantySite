@@ -12,19 +12,18 @@
 
 <body>
     <h1>Create New Warranty Issue</h1>
-    <div class="row">
-        <div class="col-md-4">
-            <form method="POST">
-                <div class='form-group frms'>
-                    {{form.hidden_tag()}}
-                    {{form.category.label}}{{form.category(class='form-control')}} <br>
-                    {{form.desc.label}} {{form.desc(class='form-control')}} <br>
-                    {{form.createdate.label}} {{form.createdate(class='form-control')}} <br>
-                    {{form.closedate.label}} {{form.closedate(class='form-control')}} <br>
-                    {{form.submit(class='form-control')}}
-                </div>
-            </form>
-        </div>
+
+    <div class="frm-tkt">
+        <form method="POST">
+            <div class='form-group frms'>
+                {{form.hidden_tag()}}
+                {{form.category.label}}{{form.category(class='form-control')}} <br>
+                {{form.desc.label}} {{form.desc(class='form-control')}} <br>
+                {{form.createdate.label}} {{form.createdate(class='form-control')}} <br>
+                {{form.closedate.label}} {{form.closedate(class='form-control')}} <br>
+                {{form.submit(class='form-control')}}
+            </div>
+        </form>
     </div>
 </body>
 {% endblock %}

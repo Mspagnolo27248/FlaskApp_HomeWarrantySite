@@ -1,25 +1,26 @@
 <!DOCTYPE html>
 <html lang="en">
+
 <head>
     <meta charset="UTF-8">
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Login</title>
 </head>
-    {% extends "base.html" %}
-    {%  block content %}
-        <h1>Login</h1>
-        
-        <form method="POST">
-        <div class="form-group frms">
-            {{form.hidden_tag()}}
-            {{form.email.label}}{{form.email(class="form-control")}}
-            {{form.password.label}}{{form.password(class="form-control")}}
-            {{form.submit()}}
-        </div>
-   
-        </form>
+{% extends "base.html" %}
+{% block content %}
+<h1>Login</h1>
 
-    {% endblock %}
+<form method="POST">
+    <div class="form-group frms">
+        {{form.hidden_tag()}}
+        {{form.email.label}}{{form.email(class="form-control")}}
+        {{form.password.label}}{{form.password(class="form-control")}}
+        {{form.submit()}}
+    </div>
+
+</form>
+
+{% endblock %}
 
 </html>

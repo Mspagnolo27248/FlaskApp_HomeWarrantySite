@@ -14,18 +14,21 @@
     <div class="jumbotron">
         {% if current_user.is_authenticated %}
         <h1>Welcome {{current_user.username|capitalize}} to the Warranty Website</h1>
-        <p>You can enter warranty tickets or veiw community reports by clicking on the buttons below.</p> 
+        <p>You can enter warranty tickets or veiw community reports by clicking on the buttons below.</p>
         <div>
-            <button type="button" class="btn btn-secondary"><a class="a-lg" href="{{url_for('welcome_user',user_id=current_user.id)}}">Tickets</a></button>
-            <button type="button" class="btn btn-secondary"><a class="a-lg" href="{{url_for('reports')}}">Reports</a></button>
-            
-        
+            <button type="button" class="btn btn-secondary"><a class="a-lg"
+                    href="{{url_for('welcome_user',user_id=current_user.id)}}">Tickets</a></button>
+            <button type="button" class="btn btn-secondary"><a class="a-lg"
+                    href="{{url_for('reports')}}">Reports</a></button>
+
+
         </div>
         {% else%}
-        <p> Please 
+        <p> Please
             <a href="{{url_for('login')}}">Login</a>
-            or 
-            <a href="{{url_for('register')}}">Register</a></p>
+            or
+            <a href="{{url_for('register')}}">Register</a>
+        </p>
         {% endif %}
     </div>
 
