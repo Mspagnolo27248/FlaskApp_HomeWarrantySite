@@ -73,8 +73,8 @@ ul {
   and (max-device-width: 480px)
   and (-webkit-min-device-pixel-ratio: 2) {
     .dt{
-        background-color: rgb(190, 23, 23);
-        color: white;
+       
+      
         height: 40px;
     }
 }
