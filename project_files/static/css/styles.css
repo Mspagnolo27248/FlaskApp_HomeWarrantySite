@@ -20,6 +20,7 @@ li {
 
 ul {
     list-style: none;
+    padding: 0px 0px 0px 0px;
 }
 .frms{
     margin: auto;
@@ -60,7 +61,9 @@ ul {
 .base-a{
     color: whitesmoke;
 }
-
+.a-lg{
+    color: whitesmoke;
+}
 .wc{
     color: whitesmoke;
 }
