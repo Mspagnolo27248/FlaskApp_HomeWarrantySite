@@ -73,14 +73,14 @@ def update_ticket(ticket_id=0):
     ticket = db.session.query(TicketModel).get(ticket_id)
     user_id = ticket.home_id
     if  request.method =='GET':
-        form  = AddTicketForm()
+        form  = AddTicketForm(category=ticket.category_id)
         form.category.choices = [(category.id,category.category) for category in 
         db.session.query(CategoryModel).all()]
         form.desc.data = ticket.desc
         if ticket.close_date:
             form.closedate.data = datetime.strptime(ticket.close_date,'%Y-%m-%d')
         form.createdate.data = datetime.strptime(ticket.create_date,'%Y-%m-%d')
-        form.category.data = ticket.category_id
+        #form.category.data = ticket.category_id
     else:     
         form  = AddTicketForm()
         form.category.choices = [(category.id,category.category) for category in 
