@@ -34,3 +34,4 @@ WTForms==2.3.3
 zipp==3.5.0
 uwsgi
 psycopg2
+Gunicorn
